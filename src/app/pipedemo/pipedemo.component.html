@@ -1,0 +1,9 @@
+<p>pipedemo works!</p>
+<ul>
+    <li>{{userData.uname | uppercase}}</li>
+    <li>{{userData.income | currency:'INR'}}</li>
+    <li>{{userData.rating | number : '3.2-2'}}</li> <!-- -2 rounds off to 2 digits -->
+    <li>{{userData.DOB | date : 'MM/yy/d'}}</li>
+    <li>{{userData.description | summary}}</li>
+    <li>{{userData | json}}</li>
+</ul>

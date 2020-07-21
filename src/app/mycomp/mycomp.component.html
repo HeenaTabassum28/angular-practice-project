@@ -1,0 +1,21 @@
+<app-header></app-header>
+<p>mycomp works!</p>
+<h1>Inside mycomp component</h1>
+<app-favourite [isFavorite]=true (myEvent) = "callMe($event)"></app-favourite>
+<app-like [totalLikes]=200 (myEvent)="callMe($event)"></app-like>
+<div [hidden]="shoppingCart.length==0">Items in your cart</div>
+<div [hidden]="shoppingCart.length>0">No Items found</div>
+
+<div *ngIf="shoppingCart.length>0">Items in your cart</div>
+<div *ngIf="shoppingCart.length==0">No Items found</div>
+
+<div *ngIf="shoppingCart.length>0">Items in your cart</div>
+<div *ngIf="shoppingCart.length==0">No Items found</div>
+
+
+<div *ngIf="shoppingCart.length>0; then show else noShow">Items in your cart By template conditioning</div>
+<ng-template #show>Items in your cart By template conditioning</ng-template>
+<ng-template #noShow>No Items found By template conditioning</ng-template>
+
+<app-pipedemo></app-pipedemo>
+<app-footer></app-footer>
