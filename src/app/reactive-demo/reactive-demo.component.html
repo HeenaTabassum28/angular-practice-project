@@ -1,0 +1,33 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col-sm-5 form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="uName.invalid && uName.touched">
+                <div *ngIf='uName.errors.required'>Name Cannot be blank</div>
+                <div *ngIf='uName.errors.minlength'>Length should be greater than 5</div>
+            </div>
+        </div>
+
+        <div class="col-sm-5 form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <div *ngIf="uEmail.invalid && uEmail.touched">
+                <div *ngIf='uEmail.errors.required'>Name Cannot be blank</div>
+                <div *ngIf='uEmail.errors.email'>Incorrect Email</div>
+                <div *ngIf='uEmail.errors.emailDomain'>Incorrect Email domain</div>
+            </div>
+        </div>
+
+        <div class="col-sm-5 form-group">
+            <label>Password</label>
+            <input type="text" class="form-control" formControlName="password">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
